@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>Meus afazeres</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="cabecalho">
+      <div class="marca" aria-hidden="true">✓</div>
+      <p class="sobretitulo">UM PASSO DE CADA VEZ</p>
+      <h1>Meus afazeres<span>.</span></h1>
+      <p class="subtitulo">Organize suas tarefas e deixe a mente mais leve.</p>
+    </header>
+
+    <section class="painel" aria-labelledby="titulo-lista">
+      <form id="form-afazer" class="form-afazer">
+        <label class="sr-only" for="campo-afazer">Nova tarefa</label>
+        <input id="campo-afazer" type="text" maxlength="120"
+          placeholder="O que você precisa fazer?" autocomplete="off" required>
+        <button class="botao-adicionar" type="submit" aria-label="Adicionar tarefa">+</button>
+      </form>
+
+      <div class="linha-lista">
+        <h2 id="titulo-lista">Sua lista</h2>
+        <span id="contador" class="contador">0 tarefas</span>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar tarefas">
+        <button class="filtro ativo" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+        <button class="filtro" type="button" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+        <button class="filtro" type="button" data-filtro="concluidas" aria-pressed="false">Concluídas</button>
+      </div>
+
+      <ul id="lista-afazeres" class="lista-afazeres" aria-live="polite"></ul>
+      <p id="mensagem-vazia" class="mensagem-vazia">
+        <span aria-hidden="true">✦</span>
+        <strong>Tudo começa com uma tarefa.</strong>
+        Adicione um afazer ali em cima para começar.
+      </p>
+
+      <footer class="rodape">
+        <span id="resumo-pendentes">Você está começando. Vamos nessa!</span>
+        <button id="limpar-concluidas" class="botao-texto" type="button" hidden>Limpar concluídas</button>
+      </footer>
+    </section>
+
+    <p class="nota">Feito com calma, usando HTML, CSS e JavaScript.</p>
+  </main>
+</body>
+</html>
